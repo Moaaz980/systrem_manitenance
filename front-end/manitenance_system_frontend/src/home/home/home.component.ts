@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -8,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+  titolo:string = 'Manitenance system';
+  descrizione:string = 'Trackit is a system to manage and monitor maintenance requests in a condominium or company. It allows users to report issues, administrators to assign them to technicians, and technicians to manage interventions until they are resolved. The system ensures traceability, organization, and up-to-date request statuses.';
 
 }
