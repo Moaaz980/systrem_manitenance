@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component , inject } from '@angular/core';
+import { LogoApp } from '../../core/logo-app.service';
 
 @Component({
   selector: 'app-register',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './register.component.css'
 })
 export class RegisterComponent {
-
+  titolo = inject(LogoApp);
 }
