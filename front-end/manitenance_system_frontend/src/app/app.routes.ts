@@ -4,7 +4,7 @@ import { LoginComponent } from '../shared/login/login.component';
 import { RegisterComponent } from '../shared/register/register.component';
 
 export const routes: Routes = [
-  {path: '' , component: HomeComponent} ,
+  {path: 'home' , component: HomeComponent} ,
   {path: 'login' , component: LoginComponent} ,
   {path: 'register' , component: RegisterComponent} ,
 ];
