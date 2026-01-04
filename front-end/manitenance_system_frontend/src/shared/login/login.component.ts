@@ -12,4 +12,10 @@ import { AuthformComponent } from '../authform/authform.component';
 export class LoginComponent {
   logo = inject(LogoApp);
   tipoForm:string = 'Login';
+
+  //login(event:object) {
+
+  //}
+
+
 }

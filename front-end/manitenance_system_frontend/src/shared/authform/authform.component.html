@@ -1,4 +1,4 @@
-<form #form="ngForm" class="flex flex-col items-center justify-center mt-16 w-fit mx-auto bg-[#FFFAF0] py-6 px-12 rounded-lg" (ngSubmit)="onSubmit(form)">
+<form #form="ngForm" class="flex flex-col items-center justify-center mt-16 w-fit mx-auto bg-[#FFFAF0] py-9 px-12 rounded-lg" (ngSubmit)="onSubmit(form)">
   <h3 class="text-[#6495E0] text-2xl mb-10">{{typeForm}}</h3>
   <mat-form-field>
   <input type="text" matInput placeholder="username" name="username" [(ngModel)]="username" #usernameControl="ngModel" required />
@@ -18,7 +18,7 @@
     </select>
   </mat-form-field>
   <p *ngIf= "roleControl.touched && roleControl.invalid" class="text-red-500 my-2 text-sm">role field is required</p>
-  <input type="submit" [value]='typeForm' class="mt-7 border rounded-2xl bg-[#6495E0] px-4 py-2 hover:bg-[#E6E6FA] transition-all duration-100"/>
+  <input type="submit" [value]='typeForm' class="mt-7 border rounded-2xl bg-[#6495E0] px-4 py-2 hover:bg-[#E6E6FA] transition-all duration-100 cursor-pointer"/>
   <button (click)="goToHome()" routerLink="/home" class="mt-7 border rounded-2xl bg-[#6495E0] px-4 py-2 hover:bg-[#E6E6FA] transition-all duration-100">Indietro</button>
   <p class="mt-9 text-center text-[#0d64e6]">{{globalError}}</p>
 </form>

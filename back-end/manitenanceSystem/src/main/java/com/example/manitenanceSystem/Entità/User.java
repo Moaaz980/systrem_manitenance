@@ -3,6 +3,7 @@ package com.example.manitenanceSystem.Entità;
 
 import com.example.manitenanceSystem.Enums.Role;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
