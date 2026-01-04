@@ -1,18 +1,24 @@
-<form class="flex flex-col items-center justify-center mt-16 w-fit mx-auto bg-[#FFFAF0] py-6 px-12 rounded-lg">
+<form #form="ngForm" class="flex flex-col items-center justify-center mt-16 w-fit mx-auto bg-[#FFFAF0] py-6 px-12 rounded-lg" (ngSubmit)="onSubmit(form)">
   <h3 class="text-[#6495E0] text-2xl mb-10">{{typeForm}}</h3>
   <mat-form-field>
-  <input type="text" matInput placeholder="username" />
+  <input type="text" matInput placeholder="username" name="username" [(ngModel)]="username" #usernameControl="ngModel" required />
   </mat-form-field>
+  <p *ngIf= "usernameControl.touched && usernameControl.invalid" class="text-red-500 my-2 text-sm">username field is required</p>
   <mat-form-field>
-  <input type="password" matNativeControl placeholder="password" />
+  <input type="password" matNativeControl placeholder="password" name="password" [(ngModel)]="password" #passwordControl="ngModel" required />
   </mat-form-field>
+  <p *ngIf= "passwordControl.touched && passwordControl.invalid" class="text-red-500 my-2 text-sm">password field is required</p>
   <mat-form-field>
-    <select matNativeControl name="role">
+    <mat-label>Role</mat-label>
+    <select matNativeControl name="role" [(ngModel)]="role" #roleControl="ngModel" required>
       <option value="ADMIN" class="p-4">Admin</option>
       <option value="USER">User</option>
       <option value="TECNICO">Tecnico</option>
+      <option value=""></option>
     </select>
   </mat-form-field>
+  <p *ngIf= "roleControl.touched && roleControl.invalid" class="text-red-500 my-2 text-sm">role field is required</p>
   <input type="submit" [value]='typeForm' class="mt-7 border rounded-2xl bg-[#6495E0] px-4 py-2 hover:bg-[#E6E6FA] transition-all duration-100"/>
   <button (click)="goToHome()" routerLink="/home" class="mt-7 border rounded-2xl bg-[#6495E0] px-4 py-2 hover:bg-[#E6E6FA] transition-all duration-100">Indietro</button>
+  <p class="mt-9 text-center text-[#0d64e6]">{{globalError}}</p>
 </form>
