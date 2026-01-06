@@ -4,8 +4,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { Router } from '@angular/router';
 import { FormsModule, NgForm } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-
-
+import { LoginPayload } from '../../models/Credenziali';
 
 @Component({
   selector: 'app-authform',
@@ -16,7 +15,7 @@ import { CommonModule } from '@angular/common';
 })
 export class AuthformComponent {
   @Input() typeForm:string = '';
-  @Output() formSubmitted = new EventEmitter<object>();
+  @Output() formSubmitted = new EventEmitter<LoginPayload>();
   constructor(private router:Router) {}
 
   goToHome(): void {
@@ -29,7 +28,7 @@ export class AuthformComponent {
   globalError:string = '';
 
   emitEvent(): void {
-    this.formSubmitted.emit({username: this.username, password: this.password, role: this.role});
+    this.formSubmitted.emit({username:this.username , password:this.password , role:this.role});
   }
 
   onSubmit(form:NgForm) {
@@ -39,6 +38,8 @@ export class AuthformComponent {
           this.globalError = '';
       }, 2000);
   }
-  this.emitEvent();
+  else {
+    this.emitEvent();
+  }
 }
 }
